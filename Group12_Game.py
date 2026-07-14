@@ -98,7 +98,7 @@ def main():
         elif scene == "select_action":
             Event.select()
         elif scene == "treasure_chest":
-            treasureChest.getTreasure(Player.atk, Player.hp, screen, chat)
+            treasureChest.getTreasure(Player.atk, Player.hp, screen, scene, chat)
         elif scene == "finish":
             continue
 
