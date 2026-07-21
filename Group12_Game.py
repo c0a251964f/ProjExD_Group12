@@ -34,7 +34,7 @@ class Event:
     """
     def __init__(self, screen, chat):
         # 90% 戦闘のみ、10% 戦闘 + 宝箱
-        self.mode = "battle_only" if random.random() < 0.9 else "battle_or_treasure"
+        self.mode = "battle_only" if random.random() < 0.7 else "battle_or_treasure"
         self.screen = screen
         self.chat = chat
     
@@ -398,6 +398,7 @@ def main():
         elif scene == "select_action":
             scene = events.select(nowKey)
         elif scene == "treasure_chest":
+            events = Event(screen, chat)
             treasureChest.getTreasure(player.atk, player.hp, player.max_hp, chat)
             scene = "select_action"
         elif scene == "finish":
